@@ -32,7 +32,6 @@ using Roslyn.Utilities;
 using Microsoft.CodeAnalysis;
 using System;
 using System.Linq;
-using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Diagnostics;
@@ -526,9 +525,9 @@ namespace MonoDevelop.CSharp
 			}
 		}
 
-		public override string GetMarkupText (Widget widget)
+		public override string GetMarkupText ()
 		{
-			return HighlightMatch (widget, useFullName ? type.FullyQualifiedContainerName : type.Name, match);
+			return HighlightMatch (useFullName ? type.FullyQualifiedContainerName : type.Name, match);
 		}
 
 		public DeclaredSymbolInfoResult (string match, string matchedString, int rank, DeclaredSymbolInfo type, bool useFullName)  : base (match, matchedString, rank)
